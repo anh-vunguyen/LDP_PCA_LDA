@@ -1,6 +1,8 @@
 %% Auteur : NGUYEN Anh Vu
 %% Instructeur :  Oscar ACOSTA
 %% FACE RECOGNITION WITH THE FRAMEWORK OF SUBSPACE LEARNING BASED ON LOCAL TEXTURE PATTERNS
+%% Reference: Fujin Zhong, Shuo Yan, Li Liu and Ke Liu, “An Effective Face Recognition Framework With Subspace Learning Based on Local Texture Patterns,” 
+%% 2018 5th International Conference on Systems and Informatics (ICSAI) Systems and Informatics (ICSAI), 2018 5th International Conference on., Nov, 2018, IEEE 2018.
 
 %% Load the Database of Images
 load('ImDatabase.mat');
