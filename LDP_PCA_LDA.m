@@ -118,24 +118,24 @@ for iS = 1:1:NoC*NoI
 end
 
 save('MatrixHistogram.mat','MatrixH');
-If the matrix of concatenated histograms MatrixH existed, load MatrixH
+% If the matrix of concatenated histograms MatrixH existed, load MatrixH
 load('MatrixHistogram.mat');
 
 % The mean of all concatenated histogram
 meanH = mean(MatrixH,2);
 save('MeanHistogram.mat','meanH');
-If the mean of all concatenated histogram meanH existed, load meanH
+% If the mean of all concatenated histogram meanH existed, load meanH
 load('MeanHistogram.mat');
 
 % The total scatter matrix St
-Run to make the total scatter matrix St
+% Run to make the total scatter matrix St
 St = 0;
 for i=1:1:NoC*NoI
     St = (MatrixH(:,i)-meanH)*(MatrixH(:,i)-meanH)';
 end
 save('ScatterMatrix.mat','St')
 
-If the total scatter matrix St existed, load the scatter matrix
+% If the total scatter matrix St existed, load the scatter matrix
 load('ScatterMatrix.mat');
 
 % The optimal projection PCA matrix Wpca
@@ -143,7 +143,7 @@ load('ScatterMatrix.mat');
 save('EigValuePCA.mat','Dpca');
 save('EigVectorPCA.mat','Vpca');
 
-If EigValuePCA.mat and EigVectorPCA.mat existed, load Dpca and Vpca
+% If EigValuePCA.mat and EigVectorPCA.mat existed, load Dpca and Vpca
 load('EigValuePCA.mat');
 load('EigVectorPCA.mat');
 
@@ -153,7 +153,7 @@ Vpca = Vpca(:,iii);
 Wpca=Vpca(:,1:nb);
 save('MatrixPCA.mat','Wpca');
 
-If the optimal projection PCA matrix Wpca existed, load Wpca
+% If the optimal projection PCA matrix Wpca existed, load Wpca
 load('MatrixPCA.mat');
 % Mean histogram of each class
 MHeC = zeros(49*256,NoC); % 50 largest eigen vectors
@@ -169,7 +169,7 @@ end
 
 save('Sb.mat','Sb');
 
-If the between-class scatter matrix Sb existed, load Sb
+% If the between-class scatter matrix Sb existed, load Sb
 load('Sb.mat');
 
 % Within-class scatter matrix Sw
@@ -182,7 +182,7 @@ end
 
 save('Sw.mat','Sw');
 
-If the within-class scatter matrix Sw existed, load Sw
+% If the within-class scatter matrix Sw existed, load Sw
 load('Sw.mat');
 
 % The optimal projection LDA matrix Wlda
@@ -197,7 +197,7 @@ Sw_pca = Wpca'*Sw*Wpca;
 
 save('Wlda.mat','Wlda');
 
-If the optimal projection LDA matrix Wlda existed, load Wlda
+% If the optimal projection LDA matrix Wlda existed, load Wlda
 load('Wlda.mat');
 % The optimal discriminant projection matrix Wopt
 Wopt = Wpca*Wlda;
